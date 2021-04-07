@@ -1,0 +1,1 @@
+### Synoro Cloudflare dns settings
