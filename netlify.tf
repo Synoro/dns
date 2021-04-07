@@ -8,8 +8,8 @@ terraform {
 }
 
 provider "cloudflare" {
-  email   = var.email
-  api_key = var.api_key
+  email     = var.email
+  api_token = var.api_token
 }
 
 data "cloudflare_zones" "synoro" {
@@ -26,7 +26,7 @@ output "name" {
 
 
 resource "cloudflare_record" "www" {
-  for_each = {for zone in data.cloudflare_zones.synoro.zones:  zone.id => zone}
+  for_each = { for zone in data.cloudflare_zones.synoro.zones : zone.id => zone }
 
   zone_id = each.value.id
   name    = "www"
@@ -36,7 +36,7 @@ resource "cloudflare_record" "www" {
 }
 
 resource "cloudflare_record" "root" {
-  for_each = {for zone in data.cloudflare_zones.synoro.zones:  zone.id => zone}
+  for_each = { for zone in data.cloudflare_zones.synoro.zones : zone.id => zone }
 
   zone_id = each.value.id
   name    = "@"
