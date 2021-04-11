@@ -9,7 +9,7 @@ terraform {
 
 provider "cloudflare" {
   email     = var.email
-  api_token = var.api_token
+  api_key = var.api_key
 }
 
 data "cloudflare_zones" "synoro" {
