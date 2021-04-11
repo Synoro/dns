@@ -6,7 +6,7 @@ resource "cloudflare_page_rule" "wwwredirects" {
   }
 
   zone_id  = each.value.id
-  target   = "www.${each.value.name}/"
+  target   = "www.${each.value.name}/*"
   priority = 1
 
   actions {
@@ -25,7 +25,7 @@ resource "cloudflare_page_rule" "redirects" {
   }
 
   zone_id  = each.value.id
-  target   = "${each.value.name}/"
+  target   = "${each.value.name}/*"
   priority = 1
 
   actions {
