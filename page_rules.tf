@@ -26,7 +26,7 @@ resource "cloudflare_page_rule" "redirects" {
 
   zone_id  = each.value.id
   target   = "${each.value.name}/*"
-  priority = 1
+  priority = 2
 
   actions {
     forwarding_url {
