@@ -1,17 +1,3 @@
-terraform {
-  required_providers {
-    cloudflare = {
-      source  = "cloudflare/cloudflare"
-      version = "~> 2.19.2"
-    }
-  }
-}
-
-provider "cloudflare" {
-  email   = var.email
-  api_key = var.api_key
-}
-
 data "cloudflare_zones" "synoro" {
   filter {
     name        = "synoro"
