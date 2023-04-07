@@ -6,6 +6,10 @@ data "cloudflare_zones" "synoro" {
   }
 }
 
+data "cloudflare_zone" "synoro" {
+  name = data.cloudflare_zones.synoro.zones[0].name
+}
+
 # output "name" {
 #   value = data.cloudflare_zones.synoro.zones
 # }
