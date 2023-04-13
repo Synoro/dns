@@ -2,11 +2,19 @@
 
 This repository manages the Synoro domain settings using terraform cloud.
 
-Run (you need a `.auto.tfvars` file):
+Run:
 ```bash
 terraform plan
 git commit
 git push
+```
+
+You need a `.auto.tfvars` file structured like this:
+```terraform
+cf_api_token = "key"
+nc_user_name = "username"
+nc_api_user = "user"
+nc_api_key = "key"
 ```
 
 ## Namecheap ip whitelisting (IPs don't match)
